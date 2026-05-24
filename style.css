@@ -7,22 +7,26 @@ html{
   scroll-behavior:smooth;
 }
 :root{
+
   /* DARK MODE */
-  --bg:#060816;
-  --card:#0f1325;
+
+  --bg:#060816;  /*background color*/
+  --card:#0f1325;  /*card background color*/
   --card2:#141936;
-  --border:#23284a;
-  --text:#ffffff;
-  --muted:#98a0c0;
+  --border:#23284a;  /*border color*/
+  --text:#ffffff;    /*main text color*/
+  --muted:#98a0c0;   /*used for subtitles or description*/
   --accent:#6ee7ff;
   --accent2:#7c5cff;
   --green:#3ddc97;
   --red:#ff5f7a;
-  --shadow:0 10px 40px rgba(0,0,0,0.45);
-  --font-main:'Inter',sans-serif;
-  --font-heading:'Space Grotesk',sans-serif;
+  --shadow:0 10px 40px rgba(0,0,0,0.45);     /*shadow used in circles*/
+  --font-main:'Inter',sans-serif;        /*main font of the website*/
+  --font-heading:'Space Grotesk',sans-serif;    /*font for heading*/
 }
+
 /* LIGHT MODE */
+
 body.light-mode{
   --bg:#f4f7ff;
   --card:#ffffff;
@@ -41,52 +45,56 @@ body{
   overflow-x:hidden;
   transition:0.35s;
 }
+
    /* BACKGROUND EFFECT */
-body::before{
+
+body::before{  /*this creates grid structure in the background*/
   content:'';
-  position:fixed;
+  position:fixed;  /*to fix the background*/
   inset:0;
   background-image:
-  linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-  linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), /*horizontal lines*/
+  linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px); /*vertical lines*/
   background-size:40px 40px;
-  z-index:-2;
+  z-index:-2;    /*background ko sabke piche rakhne ke liye*/
 }
-body::after{
+body::after{  /*created glowing purple effect */
   content:'';
-  position:fixed;
+  position:fixed; 
   width:700px;
   height:700px;
   background:
   radial-gradient(circle,
   rgba(124,92,255,0.18),
   transparent 70%);
-  top:-200px;
-  right:-150px;
+  top:-200px;    /*position of glow*/
+  right:-150px;  /*position of glow*/
   z-index:-1;
 }
-   /* AUTH */
+
+   /* AUTHENTICATION */
+
 .auth-wrapper{
   width:100%;
   min-height:100vh;
   display:grid;
-  grid-template-columns:1.2fr 0.8fr;
+  grid-template-columns:1.2fr 0.8fr;  /*divides the page into 2, left side zayada and rigth side kam*/
 }
 .auth-left{
   padding:60px;
   display:flex;
-  flex-direction:column;
+  flex-direction:column;  /*contents are arranged vertically*/
   justify-content:space-between;
 }
-.auth-brand{
+.auth-brand{  /*logo + website name*/
   display:flex;
   align-items:center;
   gap:15px;
 }
-.brand-logo{
+.brand-logo{  /*logo box*/
   width:60px;
   height:60px;
-  border-radius:18px;
+  border-radius:18px;  /*rounded corners*/
   background:
   linear-gradient(
     135deg,
@@ -100,18 +108,18 @@ body::after{
   font-weight:700;
   color:white;
 }
-.auth-brand h1{
+.auth-brand h1{  /*webiste name*/
   font-family:var(--font-heading);
   font-size:28px;
 }
-.auth-brand p{
+.auth-brand p{   /*small text under logo*/
   color:var(--muted);
   font-size:14px;
 }
-.auth-content{
+.auth-content{ /*main left side content*/
   max-width:700px;
 }
-.mini-badge{
+.mini-badge{     /*content under logo and its content*/
   display:inline-block;
   padding:10px 16px;
   border-radius:999px;
@@ -122,69 +130,71 @@ body::after{
   letter-spacing:1px;
   margin-bottom:30px;
 }
-.auth-content h2{
+.auth-content h2{  /*main heading */
   font-size:68px;
   line-height:1.05;
   font-family:var(--font-heading);
   margin-bottom:24px;
 }
-.auth-content h2 span{
+.auth-content h2 span{   /*highlighted text inside heading*/
   color:var(--accent);
 }
-.auth-content p{
+.auth-content p{   /*description paragraph*/
   font-size:18px;
   color:var(--muted);
   line-height:1.8;
   max-width:600px;
 }
-.auth-stats{
+.auth-stats{   /*stats card container*/
   display:flex;
   gap:25px;
   margin-top:50px;
 }
-.auth-stat-card{
+.auth-stat-card{   /*individual stats card*/
   background:rgba(255,255,255,0.04);
   border:1px solid rgba(255,255,255,0.08);
   padding:24px;
   border-radius:22px;
   min-width:170px;
-  backdrop-filter:blur(15px);
+  backdrop-filter:blur(15px);  /*to create blur effect like glass*/
 }
-.auth-stat-card h3{
+.auth-stat-card h3{   /*stat number*/
   font-size:36px;
   color:var(--accent);
   margin-bottom:8px;
 }
-.auth-stat-card span{
+.auth-stat-card span{  /*stat text*/
   color:var(--muted);
   font-size:14px;
 }
+
 /* RIGHT */
+
 .auth-right{
   display:flex;
-  align-items:center;
-  justify-content:center;
+  align-items:center;  /*center login box vertically*/
+  justify-content:center;  /*horizontally*/
   padding:40px;
 }
-.auth-box{
+.auth-box{    /*login and signup box container*/
   width:100%;
   max-width:430px;
   background:rgba(255,255,255,0.05);
   border:1px solid rgba(255,255,255,0.08);
   border-radius:30px;
   padding:40px;
-  backdrop-filter:blur(20px);
-  box-shadow:var(--shadow);
+  backdrop-filter:blur(20px);   /*to show blur effect like glass*/
+  box-shadow:var(--shadow);   /*to create shadow like effect*/
 }
-.auth-tabs{
+.auth-tabs{   /*tab box container*/
   display:flex;
   background:rgba(255,255,255,0.05);
   border-radius:14px;
   padding:5px;
   margin-bottom:35px;
 }
-.auth-tab{
-  flex:1;
+.auth-tab{  /*individual tab buttons*/
+  flex:1;                /*sare buttons ki equal width hai*/
   padding:14px;
   border:none;
   background:none;
@@ -194,7 +204,7 @@ body::after{
   font-weight:600;
   transition:0.3s;
 }
-.auth-tab.active{
+.auth-tab.active{       /*active selected tab*/
   background:
   linear-gradient(
     135deg,
@@ -203,153 +213,181 @@ body::after{
   );
   color:white;
 }
-.auth-box h2{
+.auth-box h2{        /*heading inside authentication box*/
   font-size:34px;
   margin-bottom:10px;
 }
-.auth-subtitle{
+.auth-subtitle{       /*subtitles under heading*/
   color:var(--muted);
   margin-bottom:28px;
 }
-/* INPUTS */
+
+/* INPUT FIELD CONTAINER */
+
 .input-group{
-  margin-bottom:20px;
+  margin-bottom:20px; /* creates space below every input box */
 }
+
+/* LABEL OF INPUT */
+
 .input-group label{
-  display:block;
-  margin-bottom:10px;
-  font-size:14px;
+  display:block; /* makes label come on separate line */
+  margin-bottom:10px; /* space between label and input */
+  font-size:14px; /* label text size */
 }
+
+/* INPUT BOX DESIGN */
+
 .input-group input{
-  width:100%;
-  height:58px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  background:rgba(255,255,255,0.04);
-  padding:0 18px;
-  color:var(--text);
-  font-size:15px;
-  outline:none;
+  width:100%; /* input takes full width */
+  height:58px; /* height of input box */
+  border-radius:14px; /* rounded corners */
+  border:1px solid var(--border); /* border color from variable */
+  background:rgba(255,255,255,0.04); /* transparent glass effect */
+  padding:0 18px; /* left-right space inside input */
+  color:var(--text); /* text color */
+  font-size:15px; /* typing text size */
+  outline:none; /* removes default blue outline */
 }
+/* WHEN USER CLICKS INSIDE INPUT */
 .input-group input:focus{
-  border-color:var(--accent);
+  border-color:var(--accent); 
 }
+/* LOGIN / SIGNUP BUTTON */
 .auth-btn{
-  width:100%;
-  height:58px;
-  border:none;
-  border-radius:16px;
+  width:100%;        /* full width button */
+  height:58px;     /* button height */
+  border:none;        /* removes default border */
+  border-radius:16px;      /* rounded button */
   background:
   linear-gradient(
     135deg,
     var(--accent),
     var(--accent2)
   );
-  color:white;
-  font-size:16px;
-  font-weight:700;
-  cursor:pointer;
-  transition:0.3s;
+  color:white; /* button text color */
+  font-size:16px; /* button text size */
+  font-weight:700; /* bold text */
+  cursor:pointer; /* hand cursor on hover */
+  transition:0.3s; 
 }
+/* BUTTON HOVER EFFECT */
 .auth-btn:hover{
-  transform:translateY(-2px);
+  transform:translateY(-2px);  /* button moves slightly upward */
 }
-   /* NAVBAR */
+
+/* NAVBAR */
+
 nav{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:90px;
-  padding:0 50px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  backdrop-filter:blur(18px);
-  background:rgba(6,8,22,0.7);
-  border-bottom:1px solid rgba(255,255,255,0.06);
-  z-index:999;
+  position:fixed;     /* navbar stays fixed while scrolling */
+  top:0;         /* places navbar at top */
+  left:0;     /* starts from left side */
+  width:100%;      /* navbar takes full width */
+  height:90px;      /* navbar height */
+  padding:0 50px;       /* left-right spacing inside navbar */
+  display:flex;      /* items come in one row */
+  align-items:center;       /* vertically center items */
+  justify-content:space-between;    
+  backdrop-filter:blur(18px);        /* glass blur effect */
+  background:rgba(6,8,22,0.7);     
+  border-bottom:1px solid rgba(255,255,255,0.06); /* bottom border */
+  z-index:999; /* keeps navbar above all sections */
 }
+/* NAVBAR BACKGROUND IN LIGHT MODE */
 body.light-mode nav{
   background:rgba(255,255,255,0.75);
 }
+/* WEBSITE LOGO */
 .nav-logo{
-  font-size:28px;
-  font-weight:800;
-  font-family:var(--font-heading);
+  font-size:28px; /* logo text size */
+  font-weight:800; /* extra bold text */
+  font-family:var(--font-heading); /* custom heading font */
 }
+/* COLORED PART OF LOGO */
 .nav-logo span{
   color:var(--accent);
 }
-/* LINKS */
+/* NAVIGATION LINKS CONTAINER */
 .nav-links{
-  display:flex;
-  gap:35px;
-  list-style:none;
+  display:flex; /* links come in one row */
+  gap:35px; /* space between links */
+  list-style:none; /* removes bullet points */
 }
+/* NAVIGATION LINKS */
 .nav-links a{
-  text-decoration:none;
-  color:var(--muted);
-  font-size:15px;
-  transition:0.3s;
+  text-decoration:none; /* removes underline */
+  color:var(--muted); /* default link color */
+  font-size:15px; /* link text size */
+  transition:0.3s; /* smooth hover effect */
 }
 .nav-links a:hover{
-  color:var(--text);
+  color:var(--text); /* link becomes brighter on hover */
 }
-/* RIGHT ACTIONS */
+/* RIGHT SIDE BUTTONS */
 .nav-actions{
-  display:flex;
-  align-items:center;
-  gap:18px;
+  display:flex; /* items arranged in row */
+  align-items:center; /* vertically center items */
+  gap:18px; /* space between buttons/icons */
 }
-/* TOGGLE */
+
+/* THEME TOGGLE BUTTON (DARK/LIGHT MODE BUTTON) */
+
 .theme-toggle{
-  width:50px;
-  height:50px;
-  border-radius:14px;
-  border:none;
-  cursor:pointer;
-  font-size:18px;
-  background:rgba(255,255,255,0.08);
-  color:var(--text);
-  transition:0.3s;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  width:50px; /* button width */
+  height:50px; /* button height */
+  border-radius:14px; /* rounded corners */
+  border:none; /* removes default border */
+  cursor:pointer; /* hand cursor when hovering */
+  font-size:18px; /* icon size */
+  background:rgba(255,255,255,0.08); /* transparent background */
+  color:var(--text); /* icon color */
+  transition:0.3s; /* smooth hover animation */
+  display:flex; /* used to center icon */
+  align-items:center; /* vertical center */
+  justify-content:center; /* horizontal center */
 }
+
+/* BUTTON HOVER EFFECT */
 .theme-toggle:hover{
-  transform:translateY(-2px);
+  transform:translateY(-2px); /* button moves slightly upward */
 }
-/* USER */
+/* USER SECTION IN NAVBAR */
 .nav-user{
-  display:flex;
-  align-items:center;
-  gap:12px;
+  display:flex; /* avatar and text come in one row */
+  align-items:center; /* vertically center items */
+  gap:12px; /* space between avatar and text */
 }
+/* USER PROFILE CIRCLE */
 .user-avatar{
-  width:48px;
-  height:48px;
-  border-radius:50%;
+  width:48px; /* avatar width */
+  height:48px; /* avatar height */
+  border-radius:50%; /* makes perfect circle */
+  /* gradient background */
   background:
   linear-gradient(
     135deg,
     var(--accent),
     var(--accent2)
   );
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  font-weight:700;
+  display:flex; /* used to center letter */
+  align-items:center; /* vertical center */
+  justify-content:center; /* horizontal center */
+  color:white; /* text color */
+  font-weight:700; /* bold letter */
 }
+
+/* SMALL TEXT BELOW USERNAME */
 .user-info span{
-  color:var(--muted);
-  font-size:12px;
+  color:var(--muted); /* muted text color */
+  font-size:12px; /* small text size */
 }
+/* USERNAME TEXT */
 .user-info h4{
-  font-size:15px;
+  font-size:15px; /* username size */
 }
+
 /* LOGOUT */
+
 .logout-btn{
   height:48px;
   padding:0 20px;
@@ -365,7 +403,9 @@ body.light-mode nav{
   background:var(--red);
   color:white;
 }
+
    /* HERO*/
+
 .hero{
   min-height:100vh;
   display:flex;
@@ -465,7 +505,9 @@ body.light-mode nav{
 .hero-stat span{
   color:var(--muted);
 }
+
    /* SECTIONS */
+
 section{
   padding:120px 70px;
 }
@@ -488,7 +530,9 @@ section{
   color:var(--muted);
   font-size:18px;
 }
+
    /* MODULES */
+
 .modules-grid{
   display:grid;
   grid-template-columns:
@@ -538,7 +582,9 @@ section{
 
   font-size:13px;
 }
+
    /* SIMULATOR */
+
 .simulator-top-bar{
   display:flex;
   justify-content:space-between;
@@ -589,7 +635,9 @@ section{
   border-radius:30px;
   padding:35px;
 }
+
 /* FORM */
+
 .form-group{
   margin-bottom:26px;
 }
@@ -614,7 +662,9 @@ section{
   margin-top:10px;
   color:var(--accent);
 }
+
 /* BUTTON */
+
 .simulate-btn{
   width:100%;
   height:62px;
@@ -636,7 +686,9 @@ section{
 .simulate-btn:hover{
   transform:translateY(-2px);
 }
+
    /* RESULTS */
+
 .result-placeholder{
   height:100%;
   display:flex;
@@ -711,7 +763,9 @@ section{
   color:var(--muted);
   line-height:1.8;
 }
+
 /* RESULT BOX */
+
 .result-box{
   margin-top:24px;
   background:rgba(255,255,255,0.03);
@@ -738,7 +792,9 @@ section{
 .recommend{
   background:rgba(110,231,255,0.1);
 }
+
    /* HOW IT WORKS */
+
 .steps-grid{
   display:grid;
   grid-template-columns:
@@ -777,7 +833,9 @@ section{
   color:var(--muted);
   line-height:1.8;
 }
+
    /* FOOTER */
+
 footer{
   padding:90px 70px 40px;
   border-top:1px solid rgba(255,255,255,0.08);
@@ -856,7 +914,9 @@ footer{
   justify-content:space-between;
   color:var(--muted);
 }
+
    /* RESPONSIVE */
+   
 @media(max-width:1100px){
   .auth-wrapper{
     grid-template-columns:1fr;
@@ -914,4 +974,14 @@ footer{
     flex-direction:column;
     text-align:center;
   }
+}
+.hidden-element{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+
+.show-element{
+  opacity:1;
+  transform:translateY(0);
 }
