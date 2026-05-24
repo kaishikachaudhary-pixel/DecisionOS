@@ -14,7 +14,9 @@
 <body>
   <!-- AUTHENTICATION SCREEN -->
   <div class="auth-wrapper" id="authWrapper">
+
     <!-- LEFT -->
+
     <div class="auth-left">
       <div class="auth-brand">
         <div class="brand-logo">D</div>
@@ -52,7 +54,9 @@
         </div>
       </div>
     </div>
+
     <!-- RIGHT -->
+     
     <div class="auth-right">
       <div class="auth-box">
         <!-- TABS -->
@@ -78,9 +82,7 @@
             <label>Password</label>
             <input type="password" id="signupPassword" placeholder="Create password">
           </div>
-          <button class="auth-btn" onclick="signupUser()">
-            Create Account
-          </button>
+          <button class="auth-btn" onclick="signupUser()">Create Account</button>
         </div>
         <!-- LOGIN -->
         <div id="loginForm" style="display:none;">
@@ -90,13 +92,23 @@
           </p>
           <div class="input-group">
             <label>Email Address</label>
-            <input type="email" id="loginEmail" placeholder="Enter your email">
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="Enter your email"
+            >
           </div>
           <div class="input-group">
             <label>Password</label>
-            <input type="password" id="loginPassword" placeholder="Enter your password">
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter your password"
+            >
           </div>
-          <button class="auth-btn" onclick="loginUser()">Login</button>
+          <button class="auth-btn" onclick="loginUser()">
+            Login
+          </button>
         </div>
       </div>
     </div>
@@ -107,7 +119,9 @@
     <nav>
       <!-- LEFT -->
       <div class="nav-left">
-        <div class="nav-logo">Decision<span>OS</span></div>
+        <div class="nav-logo">
+          Decision<span>OS</span>
+        </div>
       </div>
       <!-- CENTER -->
       <ul class="nav-links">
@@ -120,10 +134,14 @@
       <!-- RIGHT -->
       <div class="nav-actions">
         <!-- THEME TOGGLE -->
-        <button class="theme-toggle" id="themeToggle">🌙</button>
+        <button class="theme-toggle" id="themeToggle">
+          🌙
+        </button>
         <!-- USER INFO -->
         <div class="nav-user">
-          <div class="user-avatar" id="userAvatar">U</div>
+          <div class="user-avatar" id="userAvatar">
+            U
+          </div>
           <div class="user-info">
             <span>Welcome</span>
             <h4 id="displayUsername">
@@ -132,14 +150,18 @@
           </div>
         </div>
         <!-- LOGOUT -->
-        <button class="logout-btn" onclick="logoutUser()">Logout</button>
+        <button class="logout-btn" onclick="logoutUser()">
+          Logout
+        </button>
       </div>
     </nav>
     <!-- HERO -->
     <section class="hero" id="hero">
       <div class="hero-bg-glow"></div>
       <div class="hero-content">
-        <div class="hero-badge">AI POWERED DECISION ENGINE</div>
+        <div class="hero-badge">
+          AI POWERED DECISION ENGINE
+        </div>
         <h1>
           Predict Outcomes.
           <span>Reduce Risk.</span>
@@ -202,7 +224,10 @@
           </div>
         </div>
         <!-- INVESTMENT -->
-        <div class="module-card" onclick="activateModule('investment', this)">
+        <div
+          class="module-card"
+          onclick="activateModule('investment', this)"
+        >
           <div class="module-icon">📈</div>
           <h3>Investment & Crypto Strategy</h3>
           <p>
@@ -222,18 +247,34 @@
     <!-- SIMULATOR -->
 <section class="simulator-section" id="simulator">
   <div class="section-header">
-    <span class="section-tag">AI SIMULATION ENGINE</span>
-    <h2>Decision Simulator</h2>
+    <span class="section-tag">
+      AI SIMULATION ENGINE
+    </span>
+    <h2>
+      Decision Simulator
+    </h2>
   </div>
   <!-- MODULE SWITCHER -->
   <div class="simulator-top-bar">
     <div class="active-module-text">
       ⚡ Active Module:
-      <span id="activeModuleName">Startup Risk Analysis</span>
+      <span id="activeModuleName">
+        Startup Risk Analysis
+      </span>
     </div>
     <div class="simulation-tabs">
-      <button class="sim-tab active-sim-tab" onclick="switchSimulator('startup', this)">STARTUP</button>
-      <button class="sim-tab" onclick="switchSimulator('investment', this)">INVESTMENT</button>
+      <button
+        class="sim-tab active-sim-tab"
+        onclick="switchSimulator('startup', this)"
+      >
+        STARTUP
+      </button>
+      <button
+        class="sim-tab"
+        onclick="switchSimulator('investment', this)"
+      >
+        INVESTMENT
+      </button>
     </div>
   </div>
   <div class="simulator-container">
@@ -243,7 +284,11 @@
       <div id="startupForm">
         <div class="form-group">
           <label>Startup Name</label>
-          <input type="text" id="startupName" placeholder="AI SaaS Platform"> 
+          <input
+            type="text"
+            id="startupName"
+            placeholder="AI SaaS Platform"
+          >
         </div>
         <div class="form-group">
           <label>Industry</label>
@@ -280,9 +325,7 @@
           <div class="range-value">
             <span id="runwayValue">12</span> Months
           </div>
-
         </div>
-
         <button
           class="simulate-btn"
           onclick="runSimulation('startup')"
@@ -294,7 +337,11 @@
       <div id="investmentForm" style="display:none;">
         <div class="form-group">
           <label>Total Investment Capital ($)</label>
-          <input type="number" id="capital" placeholder="100000">
+          <input
+            type="number"
+            id="capital"
+            placeholder="100000"
+          >
         </div>
         <div class="form-group">
           <label>Primary Asset Type</label>
@@ -339,27 +386,48 @@
             <span id="cryptoValue">25</span>%
           </div>
         </div>
-        <button class="simulate-btn" onclick="runSimulation('investment')">Run Investment Simulation</button>
+        <button
+          class="simulate-btn"
+          onclick="runSimulation('investment')"
+        >
+          Run Investment Simulation
+        </button>
       </div>
     </div>
     <!-- RIGHT -->
     <div class="simulator-right">
       <!-- PLACEHOLDER -->
-      <div class="result-placeholder" id="resultPlaceholder">
+      <div
+        class="result-placeholder"
+        id="resultPlaceholder"
+      >
+
         <div class="placeholder-icon">⚡</div>
+
         <h3>Awaiting Simulation</h3>
+
         <p>
           Run a simulation to generate
           intelligent insights,
           strengths, risks,
           and recommendations.
         </p>
+
       </div>
+
       <!-- RESULTS -->
-      <div class="results-panel" id="resultsPanel">
-        <div class="score-card"
+
+      <div
+        class="results-panel"
+        id="resultsPanel"
+      >
+
+        <div class="score-card">
+
           <div class="score-circle">
+
             <svg width="170" height="170">
+
               <circle
                 class="bg-circle"
                 cx="85"
@@ -392,19 +460,29 @@
             <h3 id="scoreLabel">
               Strong Opportunity
             </h3>
+
             <p id="scoreDescription">
               AI simulation analysis will appear here.
-            </p
+            </p>
+
           </div>
+
         </div>
+
         <!-- STRENGTHS -->
+
         <div class="result-box">
+
           <div class="result-title">
             ✅ Key Strengths
           </div>
+
           <div id="strengthsList"></div>
+
         </div>
+
         <!-- RISKS -->
+
         <div class="result-box">
 
           <div class="result-title">
@@ -430,105 +508,72 @@
       </div>
 
     </div>
-
   </div>
-
 </section>
+
     <!-- HOW IT WORKS -->
 
     <section class="how-section" id="how">
-
       <div class="section-header">
-
-        <span class="section-tag">
-          PROCESS FLOW
-        </span>
-
-        <h2>
-          How DecisionOS Works
-        </h2>
-
+        <span class="section-tag">PROCESS FLOW</span>
+        <h2>How DecisionOS Works</h2>
       </div>
-
       <div class="steps-grid">
-
         <div class="step-card">
-
           <div class="step-number">01</div>
-
           <h3>Input Your Data</h3>
-
           <p>
             Enter startup, stock,
             or crypto investment information.
           </p>
-
         </div>
-
         <div class="step-card">
-
           <div class="step-number">02</div>
-
           <h3>AI Analysis</h3>
-
           <p>
             AI evaluates risk factors,
             volatility, and probability models.
           </p>
-
         </div>
-
         <div class="step-card">
-
           <div class="step-number">03</div>
-
           <h3>Simulation Engine</h3>
-
           <p>
             Multiple outcomes are tested instantly
             across thousands of data points.
           </p>
-
         </div>
-
         <div class="step-card">
-
           <div class="step-number">04</div>
-
           <h3>Get Insights</h3>
-
           <p>
             Receive actionable recommendations
             and forecasting intelligence.
           </p>
-
         </div>
-
       </div>
-
     </section>
+
     <!-- FOOTER -->
 
     <footer id="footer">
-
       <div class="footer-grid">
 
         <!-- BRAND -->
 
         <div class="footer-brand">
-
           <div class="footer-logo">
             Decision<span>OS</span>
           </div>
-
           <p>
             AI-powered decision intelligence platform
             helping founders and investors
             reduce uncertainty.
           </p>
-
         </div>
+
         <!-- LINKS -->
+
         <div class="footer-links">
           <h4>Platform</h4>
           <a href="#hero">Home</a>
@@ -536,7 +581,9 @@
           <a href="#simulator">Simulator</a>
           <a href="#how">How It Works</a>
         </div>
+
         <!-- LINKS -->
+
         <div class="footer-links">
           <h4>Resources</h4>
           <a href="#">Documentation</a>
@@ -544,12 +591,12 @@
           <a href="#">Support</a>
           <a href="#">Privacy Policy</a>
         </div>
+
         <!-- NEWSLETTER -->
+
         <div class="footer-newsletter">
           <h4>Stay Updated</h4>
-          <p>
-            Get AI market insights and updates.
-          </p>
+          <p>Get AI market insights and updates.</p>
           <div class="newsletter-box">
             <input type="email" placeholder="Enter email">
             <button>Subscribe</button>
@@ -557,14 +604,18 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2026 DecisionOS. All Rights Reserved.</p>
+        <p>
+          © 2026 DecisionOS. All Rights Reserved.
+        </p>
         <span>
           Built with AI Intelligence
         </span>
       </div>
     </footer>
   </div>
+
   <!-- JS -->
+
   <script src="script.js"></script>
-</body>
+</body> 
 </html>
